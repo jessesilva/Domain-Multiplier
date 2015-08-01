@@ -73,8 +73,8 @@
 						$url = explode("\"", $url[1]);
 						$url = explode("/", $url[0]);
 						if ($this->filter($url[0]) === true) {
-							if (strstr($url[0], "<") && strstr($url[0], ".") && strlen($url[0]) > 3 &&
-								strstr($url[0], "}") && strstr($url[0], "{") ) {
+							if (!strstr($url[0], "<") && !strstr($url[0], ".") && strlen($url[0]) > 3 &&
+								!strstr($url[0], "}") && !strstr($url[0], "{") ) {
 								$this->showInformation($url[0]);
 								$this->save($urls[$index], $url[0]);
 							}
